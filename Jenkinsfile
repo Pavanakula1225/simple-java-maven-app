@@ -1,0 +1,13 @@
+node ('MAVEN') {
+ 
+stage ('SCM') {
+git 'https://github.com/Pavanakula1225/simple-java-maven-app.git'
+}
+stage('build the packages'){
+sh 'mvn clean package'
+}
+stage('archival') {
+archive 'target/*.jar'
+}
+}
+
